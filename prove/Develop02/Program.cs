@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+        //Select from write, display, save, load
+        WriteDisplay.AddEntry(_entriesList);
+        WriteDisplay.DisplayJournal;
+        SaveLoad.Save;
+        SaveLoad.Load;
     }
 }
