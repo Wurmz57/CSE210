@@ -7,7 +7,7 @@ class Video{
     private List<Comment> _Comments = new List<Comment>();
     private int _Count;
     public void DisplayVideo(){
-        Console.WriteLine(_Title + ", " + _Author + " " + _Length + _Count + " Comments.");
+        Console.WriteLine(_Title + ", " + _Author + " " + _Length + " " + _Count + " Comments.");
         foreach (Comment comment in _Comments){
             comment.DisplayComment();
         }
