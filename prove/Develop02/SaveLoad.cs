@@ -1,11 +1,23 @@
 using System;
+using System.IO;
 
 public class SaveLoad{
-    public string _filename;
-    public void Save(string _filename){
-        //Save current entires list to file
+    public void Save(string _filename, List<string> _entriesList){
+        using (StreamWriter outputFile = new StreamWriter(_filename))
+            {
+                foreach(string entry in _entriesList)
+                {
+                    outputFile.WriteLine(entry);
+                }
+            }
     }
-    public void Load(string _filename){
-        //Load entries from a file
+    public List<string> Load(string _filename){
+        List<string> _newFile = new List<string>();
+        string[] lines = System.IO.File.ReadAllLines(_filename);
+        foreach (string line in lines)
+        {
+            _newFile.Add(line);
+        }
+        return _newFile;
     }
 }
