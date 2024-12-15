@@ -4,7 +4,6 @@ class Scipture
 {
     private ScriptureReference _reference = new ScriptureReference("James", 1, 5);
     private List<WordTracker> _words = new List<WordTracker>();
-    private List<string> _wordList;
     private bool check;
     Random Random = new Random();
     public void ListMaker(string scripture){
@@ -22,7 +21,7 @@ class Scipture
         }
     }
     public void HideRandomWords(){
-        int length = _wordList.Count;
+        int length = _words.Count;
         int index = Random.Next(0, length);
         _words[index].Hide();
     }
@@ -35,7 +34,7 @@ class Scipture
         }
         return true;
     }
-    public Scipture(){
-        
+    public Scipture(string scripture){
+        ListMaker(scripture);
     }
 }

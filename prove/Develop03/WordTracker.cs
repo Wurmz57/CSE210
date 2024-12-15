@@ -21,6 +21,6 @@ class WordTracker
     }
     public WordTracker(string word){
         _word = word;
-        _isHidden = true;
+        _isHidden = false;
     }
 }
